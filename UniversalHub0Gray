@@ -1,0 +1,123 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("Gray No Cat")
+local b = w:CreateFolder("Script")
+
+b:Label("Nothing Here", {
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255, 255, 255); 
+    BgColor = Color3.fromRGB(69, 69, 69); 
+}) 
+
+b:Button("Infinite Yield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+b:Button("RemoteSpy Mobile", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+end)
+
+b:Button("DarkDex Mobile", function()  
+    getgenv().Key = "Bash"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3AIY%20Dex", true))()
+end)
+
+b:Button("PlayerHub V1", function() 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
+end)
+
+b:Button("PlayerHub V2", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimitedsV2.lua')))()
+end)
+
+b:Button("Cframe,Position Grabber", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/89kgwhks"))()
+end)
+
+local b = w:CreateFolder("UGC")
+
+b:Label("⚠️Risky⚠️", {
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255, 255, 255); 
+    BgColor = Color3.fromRGB(69, 69, 69); 
+}) 
+
+b:Box("UGC ID", "string", function(value)
+    local hasNumber = string.match(value, "%d+")
+
+    if hasNumber then
+        for i, v in pairs(game:GetDescendants()) do
+            if v:IsA("RemoteEvent") then
+                v:FireServer(value)
+            elseif v:IsA("BindableEvent") then
+                v:Fire(value)
+            elseif v:IsA("RemoteFunction") then
+                v:InvokeServer(value)
+            end
+        end
+    else
+        warn("Invalid input. Please enter a string containing at least one number.")
+    end
+end)
+
+b:Box("Teleport Cframe", "text", function(value)
+    local hasNumber = string.match(value, "%d+")
+
+    if hasNumber then
+        local success, position = pcall(function()
+            return Vector3.new(loadstring("return " .. value)())
+        end)
+
+        if success then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position)
+        else
+            warn("Wrong Cframe Loll")
+        end
+    else
+        warn("Invalid input. Please enter a CFrame with at least one number.")
+    end
+end)
+
+b:Button("Firetouchinterests", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+
+for i, v in pairs(workspace:GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(playerhead, v.Parent, 0)
+        wait(0)
+        firetouchinterest(playerhead, v.Parent, 1)
+        break;
+    end
+end
+end)
+
+local b = w:CreateFolder("Side Script")
+
+b:Button("Hide Player", function()
+_G.HideAll = true
+while _G.HideAll and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+end)
+
+b:Button("Delete Proximitypromt HD", function()
+   for _, v in next, workspace:GetDescendants() do
+if v:IsA("ProximityPrompt") then
+v.HoldDuration = 0
+end
+end
+end)
+
+local b = w:CreateFolder("Credit")
+
+b:Dropdown("Araki#3572",{"Dm me ","If u have idea to","add to Script Thankyou"},true,function(mob) 
+    print(mob)
+end)
+
+b:Dropdown("Discord Link ",{"https://discord.com/invite/DqkSYYR9nh","https://discord.com/invite/DqkSYYR9nh","https://discord.com/invite/DqkSYYR9nh"},true,function(mob) --true/false, replaces the current title "Dropdown" with the option that t
+    print(mob)
+end)
