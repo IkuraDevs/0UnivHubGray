@@ -121,3 +121,5 @@ end)
 b:Dropdown("Discord Link ",{"https://discord.com/invite/DqkSYYR9nh","https://discord.com/invite/DqkSYYR9nh","https://discord.com/invite/DqkSYYR9nh"},true,function(mob) --true/false, replaces the current title "Dropdown" with the option that t
     print(mob)
 end)
+
+b:DestroyGui()
