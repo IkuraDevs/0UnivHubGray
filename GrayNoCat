@@ -1,0 +1,19 @@
+CatNotification = Instance.new("BindableFunction")
+
+function CatNotification.OnInvoke(response)
+    if response == "Execute" then
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/IkuraDevs/0UnivHubGray/Ikura/JustAScript"))()
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Wayo I Updated GrayNoCat Execute if u want to see:D"; 
+    Duration = 10;  
+    Button1 = "Execute"; 
+    Callback = CatNotification,
+    Text = "!Updated GrayNoCat Click execute"
+})
+
+task.wait(0.0777)
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/IkuraDevs/0UnivHubGray/Ikura/UniversalHub0Gray')))()
