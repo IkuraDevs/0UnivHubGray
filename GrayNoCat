@@ -16,4 +16,4 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 
 task.wait(0.0777)
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/IkuraDevs/0UnivHubGray/Ikura/UniversalHub0Gray')))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IkuraDevs/0UnivHubGray/Ikura/UniversalHub0Gray"))()
