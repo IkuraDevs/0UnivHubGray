@@ -1,24 +1,3 @@
-local musicId = "rbxassetid://4750230490"
-local volume = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999 -- Adjust the volume as needed
-
-function playMusic()
-    local music = Instance.new("Sound", game)
-    music.SoundId = musicId
-    music.Volume = volume
-    music:Play()
-
-    music.Ended:Connect(function()
-        wait(0.1)  -- Optional delay after the music ends
-        -- No need to destroy the music instance
-    end)
-end
-
--- Call the function to play the music
-playMusic()
-
-
-
-
 
 
 -- ur here probably out of curiosity or for source lucky u i obfucated it using Moonsec Bleeee
