@@ -149,7 +149,7 @@ local ClickingSpeed = 0
 local x, y, m = 55, 65.5, 1
 local loopActive = false
 
-WeLoveCat2:CreateToggle("Auto Buy", function(value)  -- Changed WeLoveCat to WeLoveCat2
+WeLoveCat2:CreateToggle("Auto Buy", function(value)  
     loopActive = value
     spawn(function()
         while loopActive do 
