@@ -3,7 +3,7 @@
 
 --[[ Notification]]--
 
-local function Notify(text)
+function Notify(text)
     local g, label = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui), Instance.new("TextLabel")
     label.Parent = g
     label.Text = text 
@@ -13,7 +13,7 @@ local function Notify(text)
     label.TextColor3 = Color3.new(1, 1, 1)
     label.BackgroundTransparency = 0.5
 
-    local corner = Instance.new("UICorner")
+    corner = Instance.new("UICorner")
     corner.CornerRadius = UDim.new(0, 6)
     corner.Parent = label
 
@@ -24,8 +24,8 @@ end
 
 --[[ Anti AFK ]]--
 
-local iku = coroutine.create(function() 
-    local VirtualUser = game:GetService("VirtualUser")
+iku = coroutine.create(function() 
+ VirtualUser = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:Connect(function()
         VirtualUser:CaptureController()
         VirtualUser:ClickButton2(Vector2.new())
@@ -35,7 +35,7 @@ coroutine.resume(iku)
 
 --[[ Random function ]]--
 
-local function ClickDet()
+function ClickDet()
     spawn(function()
         for _, descendant in ipairs(workspace:GetDescendants()) do
             if descendant:IsA("ClickDetector") then
@@ -47,7 +47,7 @@ local function ClickDet()
     end) 
 end
 
-local function proxi()
+function proxi()
 spawn(function()
     for _, descendant in ipairs(workspace:GetDescendants()) do
         if descendant:IsA("ProximityPrompt") then
@@ -57,13 +57,13 @@ spawn(function()
 end) 
 end
 
-local function CframeGen()
+function CframeGen()
     local plyr = game.Players.LocalPlayer
     local chr = plyr.Character
     setclipboard(("game.Players.LocalPlayer.Character:PivotTo(CFrame.new(%s))"):format(tostring(chr:GetPrimaryPartCFrame())))
 end
 
-local function HidePlayer()
+function HidePlayer()
     while true do
         for _, player in pairs(game.Players:GetPlayers()) do
             if player ~= game.Players.LocalPlayer and player.Character then
@@ -74,7 +74,7 @@ local function HidePlayer()
     end
 end
 
-local function DelPP()
+function DelPP()
     for _, v in next, workspace:GetDescendants() do
         if v:IsA("ProximityPrompt") then
             v.HoldDuration = 0
@@ -82,7 +82,7 @@ local function DelPP()
     end
 end
 
-local function Touchinterest()
+function Touchinterest()
     spawn(function()
         for _, descendant in ipairs(workspace:GetDescendants()) do
             if descendant:IsA("TouchTransmitter") and
@@ -99,12 +99,28 @@ local function Touchinterest()
     end)
 end
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
-local PhantomForcesWindow = Library:NewWindow("Just A Script")
+function ThisActuallyCool()
+    local currentTime = os.date("*t")
+    local hour = currentTime.hour
 
-local WeLoveCat = PhantomForcesWindow:NewSection("Script")
+    if hour >= 6 and hour < 12 then
+        return "🌅"
+    elseif hour >= 12 and hour < 15 then
+        return "☀️🕛"
+    elseif hour >= 15 and hour < 18 then
+        return "🌞"
+    elseif hour >= 18 or hour < 6 then
+        return "🌙"
+    else
+        return "🌄"
+    end
+end
 
+PhantomForcesWindow = Library:NewWindow("Just A Script " .. ThisActuallyCool())
+
+WeLoveCat = PhantomForcesWindow:NewSection("Script")
 --[[ Hub Script ]] --
 
 WeLoveCat:CreateButton("Infinite Yield", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -131,7 +147,7 @@ WeLoveCat:CreateButton("Hydroxide Mobile", function()
 local owner = "Hosvile"
 local branch = "revision"
 
-local function webImport(file)
+function webImport(file)
     return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
 end
 
@@ -199,10 +215,6 @@ WeLoveCat2:CreateButton("Cframe Teleport", function()
     Notify("Cframe Teleport Copied")
 end)
 
-WeLoveCat2:CreateButton("Cframe Clipboard", function() 
-    setclipboard(game.Players.LocalPlayer.Character.PrimaryPart.CFrame)
-Notify("Cframe Copied")
-end)
 
 WeLoveCat2:CreateButton("Hide Player Loop", function() 
     HidePlayer()
@@ -225,7 +237,7 @@ end)
 
 --[[ Firing Function 3rd Section ]]--
 
-local WeLoveCat3 = PhantomForcesWindow:NewSection("Firing")
+WeLoveCat3 = PhantomForcesWindow:NewSection("Firing")
 
 WeLoveCat3:CreateButton("Touchinterests", function()
     Touchinterest()
@@ -244,7 +256,7 @@ end)
 
 --[[ 4th Section Credit ]]--
 
-local WeLoveCat= PhantomForcesWindow:NewSection("Discord")
+WeLoveCat= PhantomForcesWindow:NewSection("Discord")
 
 WeLoveCat:CreateButton("Support By Joining", function()
 setclipboard("https://discord.com/invite/7t4j478wG6")
