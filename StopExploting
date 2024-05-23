@@ -122,7 +122,6 @@ PhantomForcesWindow = Library:NewWindow("Just A Script " .. ThisActuallyCool())
 
 WeLoveCat = PhantomForcesWindow:NewSection("Script")
 --[[ Hub Script ]] --
-
 WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
 Notify("Wyvern Loading.....")
 end)
@@ -270,3 +269,5 @@ WeLoveCat:CreateButton("Destroy Gui", function()
 game.CoreGui.WizardLibrary:Destroy()
 Notify("Library Destroy")
 end)
+
+Notify(" 🪷 ")
