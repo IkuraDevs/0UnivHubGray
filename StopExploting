@@ -270,4 +270,4 @@ game.CoreGui.WizardLibrary:Destroy()
 Notify("Library Destroy")
 end)
 
-Notify(" 🪷 ")
+Notify(" Just A Script ")
