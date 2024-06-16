@@ -58,9 +58,10 @@ end)
 end
 
 function CframeGen()
-    local plyr = game.Players.LocalPlayer
-    local chr = plyr.Character
-    setclipboard(("game.Players.LocalPlayer.Character:PivotTo(CFrame.new(%s))"):format(tostring(chr:GetPrimaryPartCFrame())))
+   local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local o = string.format("%d, %d, %d", pos.X + 0.5, pos.Y + 0.5, pos.Z + 0.5)
+getgenv().global = o
+setclipboard("game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(".. global .. ")))")
 end
 
 function HidePlayer()
@@ -215,7 +216,7 @@ end)
 
 WeLoveCat2:CreateButton("Cframe Teleport", function() 
     CframeGen()
-    Notify("Cframe Teleport Copied")
+Notify("Copied At\n" .. global)
 end)
 
 
