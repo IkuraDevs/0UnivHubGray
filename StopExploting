@@ -3,24 +3,7 @@
 
 --[[ Notification]]--
 
-function Notify(text)
-    local g, label = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui), Instance.new("TextLabel")
-    label.Parent = g
-    label.Text = text 
-    label.Size = UDim2.new(0, 200, 0, 50)
-    label.Position = UDim2.new(0.5, -100, 1, -50)
-    label.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    label.TextColor3 = Color3.new(1, 1, 1)
-    label.BackgroundTransparency = 0.5
-
-    corner = Instance.new("UICorner")
-    corner.CornerRadius = UDim.new(0, 6)
-    corner.Parent = label
-
-    game:GetService("TweenService"):Create(label, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -100, 0.9, -25)}):Play()
-    wait(3)
-    label:Destroy()
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAScripts/Notifier/main/Ping.lua"))()
 
 --[[ Anti AFK ]]--
 
@@ -124,28 +107,60 @@ PhantomForcesWindow = Library:NewWindow("Just A Script " .. ThisActuallyCool())
 WeLoveCat = PhantomForcesWindow:NewSection("Script")
 --[[ Hub Script ]] --
 WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
-Notify("Wyvern Loading.....")
+  Sound(6150774030, 0.1)
+Notify("Wyvern Loading.....",3)
+  
 end)
 
 WeLoveCat:CreateButton("Infinite Yield", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-Notify("Infinite Yield Loaded")
-end)
+if V10 then
+  Sound(6150774030, 0.1)
+  task.wait(.1)
+  Notify("Infinite Yield Loaded", 3)
+else
+  Notify("Infinite Yield Loaded", 3)
+end ;
+end) ;
 
 WeLoveCat:CreateButton("RemoteSpy Mobile", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
-Notify("SimpleSpy Loaded")
-end)
+if V10 then 
+  Sound(6150774030, 0.1)
+  task.wait(.1)
+  Notify("SimpleSpy Loaded", 3)
+else
+  Notify("SimpleSpy Loaded", 3)
+end ;
+end) ;
 
 WeLoveCat:CreateButton("Dark Dex New", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
-Notify("Dex V3 Loaded")
-end)
+if V10 then
+  Sound(6150774030, 0.1)
+  task.wait(.1)
+  Notify("Dex V3 Loaded", 3)
+else
+  Notify("Dex V3 Loaded", 3)
+end ;
+end) ;
 
 WeLoveCat:CreateButton("V1 Player Hub", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
-Notify("V1 PlayerHub Loaded")
-end)
+if V10 then
+  Sound(6150774030, 0.1)
+  task.wait(.1)
+  Notify("V1 PlayerHub Loaded", 3)
+else
+  Notify("V1 PlayerHub Loaded", 3)
+end ; 
+end) ;
 
 WeLoveCat:CreateButton("V2 Player Hub", function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimitedsV2.lua')))()
-  Notify("V2 Player Hub Loaded")
-end)
+  if V10 then
+  Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("V2 Player Hub Loaded", 3)
+  else
+    Notify("V2 Player Hub Loaded", 3)
+  end ;
+end) ;
 
 WeLoveCat:CreateButton("Hydroxide Mobile", function() 
 local owner = "Hosvile"
@@ -155,10 +170,16 @@ function webImport(file)
     return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
 end
 
-webImport("init")
-webImport("ui/main")
-  Notify("Hydroxide Loaded")
-end)
+webImport("init") ;
+webImport("ui/main") ;
+  if V10 then
+  Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Hydroxide Loaded", 3)
+  else
+    Notify("Hydroxide Loaded", 3)
+  end ;
+end) ;
 
 --[[ 2nd Section UGC Script ]]--
 local WeLoveCat2 = PhantomForcesWindow:NewSection("UGC")  
@@ -192,8 +213,14 @@ WeLoveCat2:CreateToggle("Auto Buy", function(value)
             end
         end
     end)
-Notify("Auto Buy Limited")
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Auto Buy Limited\n" .. tostring(loopActive), 3)
+  else
+    Notify("Auto Buy Limited\n" .. tostring(loopActive), 3)
+  end ;
+end) ;
 
 WeLoveCat2:CreateToggle("Auto Close Error", function(value)
     loopActive = value
@@ -211,33 +238,61 @@ WeLoveCat2:CreateToggle("Auto Close Error", function(value)
             wait()
         end
     end)
- Notify("Auto Close Error")
-end)
+ if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Auto Close Error\n" .. tostring(loopActive), 3)
+ else
+   Notify("Auto Close Error\n" .. tostring(loopActive), 3)
+ end ;
+end) ;
 
 WeLoveCat2:CreateButton("Cframe Teleport", function() 
     CframeGen()
-Notify("Copied At\n" .. global)
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Copied At\n" .. global, 3)
+  else
+    Notify("Copied At\n" .. global, 3)
+  end ;
+end) ;
 
 
 WeLoveCat2:CreateButton("Hide Player Loop", function() 
     HidePlayer()
-    Notify("All Player Are now Invisible")
-end)
+    if V10 then
+    Sound(6150774030, 0.1)
+      task.wait(.1)
+      Notify("All Player Are now Invisible", 3)
+    else
+      Notify("All Player Are now Invisible", 3)
+    end ;
+end) ;
 
 WeLoveCat2:CreateButton("Delete Proximity CD", function() 
     DelPP()
-    Notify("Proximity Deleted")
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    Notify("Proximity Deleted", 3)
+  else
+    Notify("Proximity Deleted", 3)
+  end ;
+end) ;
 
 WeLoveCat2:CreateButton("Adonis Checker", function() 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAScripts/Favorable/main/AdonisChecker.Lua",true))()
 end)
 
 WeLoveCat2:CreateButton("Adonis Bypassed", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua", true))() --[[ AdonisCries Is Famous Adonis Bypasser and The Only working The Catch is it's Ofbuscate But Ton Player used it and nothing Happen or any Bad ]]-- 
-
-   Notify("Bypassed!")
-end) 
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Bypassed!", 3)
+  else
+    Notify("Bypassed!", 3)
+  end ;
+end) ;
 
 --[[ Firing Function 3rd Section ]]--
 
@@ -245,30 +300,54 @@ WeLoveCat3 = PhantomForcesWindow:NewSection("Firing")
 
 WeLoveCat3:CreateButton("Touchinterests", function()
     Touchinterest()
-    Notify("Touchinterest Fired")
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Touchinterest Fired", 3)
+  else
+    Notify("Touchinterest Fired", 3)
+  end ;
+end) ;
 
 WeLoveCat3:CreateButton("Clickedetector", function()
     ClickDet()
-    Notify("Clickedetector Fired")
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("Clickedetector Fired", 3)
+  else
+    Notify("Clickedetector Fired", 3)
+  end ;
+end) ;
 
 WeLoveCat3:CreateButton("ProximityPrompt", function()
     proxi()
-    Notify("Proximitypromt Fired")
-end)
+  if V10 then
+    Sound(6150774030, 0.1)
+    task.wait(.1)
+    Notify("ProximityPromt Fired", 3)
+  else
+    Notift("ProximityPrompt Fired", 3)
+  end ;
+end) ;
 
 --[[ 4th Section Credit ]]--
 
-WeLoveCat= PhantomForcesWindow:NewSection("Discord")
+cat = PhantomForcesWindow:NewSection("Discord")
 
-WeLoveCat:CreateButton("Support By Joining", function()
-setclipboard("https://discord.com/invite/7t4j478wG6")
-end)
+cat:CreateButton("Support By Joining", function()
+    setclipboard("https://discord.com/invite/7t4j478wG6")
+    Sound(6150774030, 0.1)
+end) ;
 
-WeLoveCat:CreateButton("Destroy Gui", function()
-game.CoreGui.WizardLibrary:Destroy()
-Notify("Library Destroy")
-end)
+cat:CreateButton("Destroy Gui", function()
+    game.CoreGui.WizardLibrary:Destroy()
+    Notify("Library Destroy", 3)
+    Sound(6150774030, 0.1)
+end) ;
 
-Notify(" Just A Script ")
+cat:CreateToggle("Enabled Sound", function(value)
+    getgenv().V10 = value 
+end) ;
+
+Notify(" Just A Script ", 3)
