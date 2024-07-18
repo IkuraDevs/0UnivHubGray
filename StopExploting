@@ -344,7 +344,7 @@ WeLoveCat3:CreateButton("ProximityPrompt", function()
     task.wait(.1)
     Notify("ProximityPromt Fired", 3)
   else
-    Notift("ProximityPrompt Fired", 3)
+    Notify("ProximityPrompt Fired", 3)
   end ;
 end) ;
 
