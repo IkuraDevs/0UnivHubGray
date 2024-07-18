@@ -16,6 +16,9 @@ iku = coroutine.create(function()
 end) 
 coroutine.resume(iku)
 
+local o = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local x, y, z = math.floor(o.X), math.floor(o.Y), math.floor(o.Z)
+
 --[[ Random function ]]--
 
 function ClickDet()
@@ -38,6 +41,16 @@ spawn(function()
         end
     end
 end) 
+end
+
+function twiny()
+local twn = string.format([[
+    local tweenInfo = TweenInfo.new(2); -- tween Speed Default 2 
+    local goal = {CFrame = CFrame.new(%d, %d, %d)}
+    local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, tweenInfo, goal)
+    tween:Play();
+]], x, y, z)
+setclipboard(twn)
 end
 
 function CframeGen()
@@ -247,6 +260,10 @@ WeLoveCat2:CreateToggle("Auto Close Error", function(value)
  end ;
 end) ;
 
+WeLoveCat2:CreateButton("Cframe Teleport", function()
+ twiny()
+ Notify("Copied! On your clipboard", 3)
+end)
 WeLoveCat2:CreateButton("Cframe Teleport", function() 
     CframeGen()
   if V10 then
