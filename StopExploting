@@ -339,13 +339,13 @@ end) ;
 
 WeLoveCat3:CreateButton("ProximityPrompt", function()
     proxi()
-  if V10 then
-    Sound(6150774030, 0.1)
-    task.wait(.1)
-    Notify("ProximityPromt Fired", 3)
-  else
-    Notify("ProximityPrompt Fired", 3)
-  end ;
+    if V10 then
+        Sound(6150774030, 0.1)
+        task.wait(0.1)
+        Notify("ProximityPrompt Fired", 3)
+    else
+        Notify("ProximityPrompt Fired", 3)
+    end
 end) ;
 
 --[[ 4th Section Credit ]]--
