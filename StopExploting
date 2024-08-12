@@ -108,7 +108,8 @@ PhantomForcesWindow = Library:NewWindow("Just A Script " .. ThisActuallyCool())
 
 WeLoveCat = PhantomForcesWindow:NewSection("Script")
 --[[ Hub Script ]] --
-WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
+WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://boykisser.army/p/raw/pl6mjl4xoy"))()
+
   Sound(6150774030, 0.1)
 Notify("Wyvern Loading.....",3)
   
