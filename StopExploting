@@ -108,8 +108,7 @@ PhantomForcesWindow = Library:NewWindow("Just A Script " .. ThisActuallyCool())
 
 WeLoveCat = PhantomForcesWindow:NewSection("Script")
 --[[ Hub Script ]] --
-WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://boykisser.army/p/raw/pl6mjl4xoy"))()
-
+WeLoveCat:CreateButton("Wyvern", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
   Sound(6150774030, 0.1)
 Notify("Wyvern Loading.....",3)
   
@@ -143,26 +142,6 @@ if V10 then
 else
   Notify("Dex V3 Loaded", 3)
 end ;
-end) ;
-
-WeLoveCat:CreateButton("V1 Player Hub", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
-if V10 then
-  Sound(6150774030, 0.1)
-  task.wait(.1)
-  Notify("V1 PlayerHub Loaded", 3)
-else
-  Notify("V1 PlayerHub Loaded", 3)
-end ; 
-end) ;
-
-WeLoveCat:CreateButton("V2 Player Hub", function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimitedsV2.lua')))()
-  if V10 then
-  Sound(6150774030, 0.1)
-    task.wait(.1)
-    Notify("V2 Player Hub Loaded", 3)
-  else
-    Notify("V2 Player Hub Loaded", 3)
-  end ;
 end) ;
 
 WeLoveCat:CreateButton("Hydroxide Mobile", function() 
